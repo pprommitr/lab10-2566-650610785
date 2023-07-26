@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
 import { UserCardDetail } from "./UserCardDetail";
+import Image from "next/image";
 
 export const UserCard = ({ name, imgUrl, address, email }) => {
   const [isDetailShown, setIsDetailShown] = useState(false);
