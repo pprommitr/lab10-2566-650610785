@@ -15,7 +15,13 @@ export const UserCard = ({ name, imgUrl, address, email }) => {
   return (
     <div className="border-bottom">
       <div className="d-flex align-items-center p-3" onClick={userCardOnClick}>
-        <img src={imgUrl} width="90px" className="rounded-circle me-4"></img>
+        <Image
+          src={imgUrl}
+          width={90}
+          height={90}
+          className="rounded-circle me-4"
+          alt="Profile Picture"
+        ></Image>
         <span className="text-center display-6 me-auto">{name}</span>
         {isDetailShown ? <IconChevronUp /> : <IconChevronDown />}
       </div>

@@ -1,13 +1,13 @@
 "use client";
 
-import UserCard from "@U/components/UserCard";
+import { UserCard } from "@/components/UserCard";
 import { cleanUser } from "@/libs/cleanUser";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function RandomUserPage() {
   //user = null or array of object
-  const [users, setUsers] = useState(null);
+  const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [genAmount, setGenAmount] = useState(1);
   const [isFirstLoad, setIsFirstLoad] = useState(true);
@@ -30,7 +30,7 @@ export default function RandomUserPage() {
       `https://randomuser.me/api/?results=${genAmount}`
     );
     setIsLoading(false);
-    const users = resp.data.results;
+    const newusers = resp.data.results;
     setUsers([...newusers.map(cleanUser)]);
     console.log(users);
     //Your code here
